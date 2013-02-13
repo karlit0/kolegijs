@@ -1,0 +1,29 @@
+<%= form_for(@kolegiji) do |f| %>
+  <% if @kolegiji.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kolegiji.errors.count, "error") %> prohibited this kolegiji from being saved:</h2>
+
+      <ul>
+      <% @kolegiji.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ime %><br />
+    <%= f.text_field :ime %>
+  </div>
+  <div class="field">
+    <%= f.label :ocjena %><br />
+    <%= f.number_field :ocjena %>
+  </div>
+  <div class="field">
+    <%= f.label :komentar %><br />
+    <%= f.text_field :komentar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

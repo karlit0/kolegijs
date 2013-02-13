@@ -1,0 +1,2 @@
+module KolegijisHelper
+end

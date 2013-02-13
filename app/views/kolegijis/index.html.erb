@@ -1,0 +1,27 @@
+<h1>Listing kolegijis</h1>
+
+<table>
+  <tr>
+    <th>Ime</th>
+    <th>Ocjena</th>
+    <th>Komentar</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kolegijis.each do |kolegiji| %>
+  <tr>
+    <td><%= kolegiji.ime %></td>
+    <td><%= kolegiji.ocjena %></td>
+    <td><%= kolegiji.komentar %></td>
+    <td><%= link_to 'Show', kolegiji %></td>
+    <td><%= link_to 'Edit', edit_kolegiji_path(kolegiji) %></td>
+    <td><%= link_to 'Destroy', kolegiji, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Kolegiji', new_kolegiji_path %>
